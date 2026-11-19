@@ -1,4 +1,4 @@
-# Capacidades soberanas sobre inteligencia artificial
+# Capacidades soberanas sobre inteligencia artificial en la Universidad
 
 El conocimiento es el núcleo centrar de la Universidad. La inteligencia artificial es el desarrollo tecnológico que más afecta este núcleo, probablemente desde que la Universidad existe. Es fundamental que la Universidad como sistema de producción y difusión de conocimiento, en general, y las Universidades, en particular, tengan las máximas capacidades soberanas para gestionar esta tecnología.
 
