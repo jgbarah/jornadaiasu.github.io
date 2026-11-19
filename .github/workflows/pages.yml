@@ -1,0 +1,37 @@
+name: Publicar sitio en GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      # Este directorio es la raíz del artefacto publicado: no se empaqueta el resto del repositorio.
+      - name: Empaquetar exclusivamente public/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public/
+      - name: Publicar el sitio
+        id: deployment
+        uses: actions/deploy-pages@v4
